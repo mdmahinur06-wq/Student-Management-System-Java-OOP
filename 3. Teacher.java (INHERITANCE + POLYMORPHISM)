@@ -1,0 +1,20 @@
+class Teacher extends Person {
+    private String subject;
+
+    public Teacher(String name, int id, String subject) {
+        super(name, id);
+        this.subject = subject;
+    }
+
+    public void assignGrade(Student student, int marks) {
+        student.setMarks(marks);
+    }
+
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Teacher Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Subject: " + subject);
+    }
+}
