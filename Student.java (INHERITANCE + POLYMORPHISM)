@@ -1,0 +1,32 @@
+class Student extends Person {
+    private int marks;
+    private String course;
+
+    public Student(String name, int id, int marks, String course) {
+        super(name, id);
+        this.marks = marks;
+        this.course = course;
+    }
+
+    // Getter & Setter (Encapsulation)
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+    public void enrollCourse(String course) {
+        this.course = course;
+    }
+
+    // Method Overriding (Polymorphism)
+    @Override
+    public void displayInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Marks: " + marks);
+        System.out.println("Course: " + course);
+    }
+}
