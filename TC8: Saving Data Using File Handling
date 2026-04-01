@@ -1,0 +1,35 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
+class Student {
+    private String name;
+    private String id;
+    private String program;
+
+    public Student(String name, String id, String program) {
+        this.name = name;
+        this.id = id;
+        this.program = program;
+    }
+
+    public String getData() {
+        return "Name: " + name + ", ID: " + id + ", Program: " + program;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Mahi", "202407010092", "Software Engineering");
+
+        try {
+            FileWriter writer = new FileWriter("student.txt");
+            writer.write(s1.getData());
+            writer.close();
+
+            System.out.println("Data saved successfully.");
+            System.out.println("Saved Data: " + s1.getData());
+        } catch (IOException e) {
+            System.out.println("Error saving file.");
+        }
+    }
+}
