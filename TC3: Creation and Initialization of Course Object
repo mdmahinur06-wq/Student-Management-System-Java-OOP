@@ -1,0 +1,32 @@
+class Course {
+    private String courseCode;
+    private String courseName;
+    private int creditHours;
+
+    public Course(String courseCode, String courseName, int creditHours) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.creditHours = creditHours;
+    }
+
+    public void displayCourse() {
+        System.out.println("Course Code: " + courseCode);
+        System.out.println("Course Name: " + courseName);
+        System.out.println("Credit Hours: " + creditHours);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // TC3: Create Course Object
+        Course c1 = new Course(
+            "BIT1123",
+            "Object Oriented Programming",
+            3
+        );
+
+        // Display Output
+        c1.displayCourse();
+    }
+}
