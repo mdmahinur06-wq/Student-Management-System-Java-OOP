@@ -1,0 +1,46 @@
+class Student {
+    private String name;
+    private String id;
+    private int marks;
+
+    public Student(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+    public void displayInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student ID: " + id);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+class Teacher {
+    private String name;
+
+    public Teacher(String name) {
+        this.name = name;
+    }
+
+    public void assignMarks(Student student, int marks) {
+        student.setMarks(marks);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Mahi", "202407010092");
+        Teacher t1 = new Teacher("Sir Nazmirul");
+
+        // TC5: Assign Marks
+        t1.assignMarks(s1, 88);
+
+        // Display Output
+        s1.displayInfo();
+    }
+}
