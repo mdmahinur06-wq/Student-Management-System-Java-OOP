@@ -1,0 +1,46 @@
+abstract class Person {
+    protected String name;
+    protected String id;
+    protected String email;
+
+    public Person(String name, String id, String email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+
+    public abstract void displayInfo();
+}
+
+class Teacher extends Person {
+    private String specialization;
+
+    public Teacher(String name, String id, String email, String specialization) {
+        super(name, id, email);
+        this.specialization = specialization;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Teacher Name: " + name);
+        System.out.println("Teacher ID: " + id);
+        System.out.println("Email: " + email);
+        System.out.println("Specialization: " + specialization);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // TC2: Create Teacher Object
+        Teacher t1 = new Teacher(
+            "Sir Nazmirul",
+            "T001",
+            "sir@email.com",
+            "Java Programming"
+        );
+
+        // Display Output
+        t1.displayInfo();
+    }
+}
