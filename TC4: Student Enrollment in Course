@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+
+class Course {
+    private String courseCode;
+    private String courseName;
+
+    public Course(String courseCode, String courseName) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+}
+
+class Student {
+    private String name;
+    private String id;
+    private ArrayList<String> enrolledCourses;
+
+    public Student(String name, String id) {
+        this.name = name;
+        this.id = id;
+        this.enrolledCourses = new ArrayList<>();
+    }
+
+    public void enrollCourse(Course course) {
+        enrolledCourses.add(course.getCourseCode());
+    }
+
+    public void displayInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student ID: " + id);
+        System.out.println("Enrolled Courses: " + enrolledCourses);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Mahi", "202407010092");
+        Course c1 = new Course("BIT1123", "Object Oriented Programming");
+
+        // TC4: Enroll Student in Course
+        s1.enrollCourse(c1);
+
+        // Display Output
+        s1.displayInfo();
+    }
+}
