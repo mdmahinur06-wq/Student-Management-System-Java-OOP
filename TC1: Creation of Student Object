@@ -1,0 +1,46 @@
+abstract class Person {
+    protected String name;
+    protected String id;
+    protected String email;
+
+    public Person(String name, String id, String email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+
+    public abstract void displayInfo();
+}
+
+class Student extends Person {
+    private String program;
+
+    public Student(String name, String id, String email, String program) {
+        super(name, id, email);
+        this.program = program;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student ID: " + id);
+        System.out.println("Email: " + email);
+        System.out.println("Program: " + program);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // TC1: Create Student Object
+        Student s1 = new Student(
+            "Mahi",
+            "202407010092",
+            "mahi@email.com",
+            "Software Engineering"
+        );
+
+        // Display output
+        s1.displayInfo();
+    }
+}
